@@ -1,0 +1,30 @@
+install node.js 13.0.1
+https://nodejs.org/en/
+
+node -v
+13.0.1
+
+
+npm install -g create-react-app
+폴더 생성 ringring
+
+create-react-app ringring
+
+install yarn 1.19.1
+https://yarnpkg.com/en/docs/install#windows-stable
+
+
+컴포넌트는 일반 자바스크립트가 아닌 JSX 라는 문법으로 작성하게 됨. 
+여러가지의 파일을 한개로 결합하기 위해서 우리는 Webpack 이라는 도구를 사용.
+JSX 를 비롯한 새로운 자바스크립트 문법들을 사용하기 위해서 Babel 이라는 도구를 사용.
+
+
+
+install visual stuido code
+ https://code.visualstudio.com/
+ 
+ 
+ 
+ 
+ 
+ 
