@@ -24,7 +24,8 @@ install visual stuido code
  https://code.visualstudio.com/
  
  
- 
- 
+ remote와 공통분모가 없어 pull이 안될 때
+ [rejected] master -> master (non-fast-forward) 에러
+ git pull origin master --allow-unrelated-histories
  
  
