@@ -1,12 +1,17 @@
 import React from 'react';
-
+import TableCell from '@material-ui/core/TableCell';
 class CustomerAddress extends React.Component {
     render() {
         return (
-            <div>
-                <h5>{this.props.address}</h5>
-                <p>{this.props.detail}</p>
-            </div>
+            <React.Fragment>
+                <TableCell>
+                    {this.props.address}
+                </TableCell>
+                <TableCell>
+                    {this.props.detail}
+                </TableCell>
+            </React.Fragment>
+
         )
     }
 }
