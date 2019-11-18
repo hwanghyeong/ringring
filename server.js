@@ -28,7 +28,15 @@ const customers = [
   ]
 
 app.get('/api/customers', (req, res) => {
-    res.send(customers);
+  setTimeout(result, 3000, res);
+  // setTimeout(function(){
+  //   res.send(customers);
+  // }, 3000);
 });
+
+result = (res) => {
+  res.send(customers);
+}
+
 
 app.listen(port, () => console.log(`LISTENING on port ${port}`));
