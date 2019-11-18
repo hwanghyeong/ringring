@@ -25,29 +25,23 @@ const styles = theme => ({
 });
 
 
-const customers = [
-  {
-    'userName': 'guddjs',
-    'pw': 'dksk11',
-    'address': 'jukjeon',
-    'detail': '11292'
-  },
-  {
-    'userName': 'dami',
-    'pw': 'pwpwpwp',
-    'address': 'gumidong',
-    'detail': '12-22'
-  },
-  {
-    'userName': 'hyeon',
-    'pw': 'jiral',
-    'address': 'seocho',
-    'detail': '5005'
-  }
-]
-
-
 class App extends React.Component {
+
+  state = {
+    customers: ''
+  }
+
+  componentDidMount() {
+    this.callApi()
+    .then(res => this.setState({customers:res}))
+    .catch(e => console.log(e));
+  }
+
+  callApi = async () => {
+    const response = await fetch('/api/customers');
+    return response.json();
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -64,7 +58,9 @@ class App extends React.Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              {customers.map(c => <Customer key={c.userName} userName={c.userName} pw={c.pw} address={c.address} detail={c.detail}></Customer>)}
+              {this.state.customers ? this.state.customers.map(c => {
+                return <Customer key={c.userName} userName={c.userName} pw={c.pw} address={c.address} detail={c.detail}></Customer>
+              }): ''}
             </TableBody>
           </Table>
         </Paper>
